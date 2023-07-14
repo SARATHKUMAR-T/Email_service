@@ -31,16 +31,15 @@ app.post("/mail", async (req, res) => {
       subject: "Recruitement call",
       replyTo: req.body.email,
       text: req.body.message,
+      subject: req.body.name,
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
-        res
-          .status(500)
-          .json({
-            message: "We are Facing some problem with this service",
-            error,
-          });
+        res.status(500).json({
+          message: "We are Facing some problem with this service",
+          error,
+        });
       } else {
         res.status(200).json({ message: "Email sent successfully" });
       }
