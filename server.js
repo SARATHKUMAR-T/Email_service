@@ -29,7 +29,7 @@ app.post("/mail", async (req, res) => {
       from: "spellbee931@gmail.com",
       to: "sarathkumartk98@gmail.com",
       subject: "Enquiry",
-      text: req.body,
+      text: "good",
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
