@@ -27,11 +27,9 @@ app.post("/mail", async (req, res) => {
 
     var mailOptions = {
       from: "spellbee931@gmail.com",
-      to: "sarathkumartk98@gmail.com",
-      subject: "Recruitement call",
-      replyTo: req.body.email,
-      text: req.body.message,
-      subject: req.body.name,
+      to: "info@vgfenceproducts.com",
+      subject: "Enquiry",
+      text: req.body,
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
